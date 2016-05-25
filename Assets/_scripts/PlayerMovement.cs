@@ -20,6 +20,6 @@ public class PlayerMovement : MonoBehaviour {
 			0.0f
 		);
 
-		playerRigidbody.rotation = Quaternion.identity; //Quaternion.Euler(0.0f, 0.0f, 0.0f)
+		playerRigidbody.rotation = Quaternion.identity;  //Quaternion.Euler(0.0f, 0.0f, 0.0f)
 	}
 }
