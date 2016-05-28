@@ -10,7 +10,7 @@ public class EnemyBehavior : MonoBehaviour {
 
 	void Awake(){
 
-		gameController = GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>();
+		gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 		enemyRigidbody = GetComponent<Rigidbody>();
 		audioSource = GetComponent<AudioSource>();
 	}
@@ -31,10 +31,12 @@ public class EnemyBehavior : MonoBehaviour {
 
 			audioSource.Play();
 			// set game over
-			//gameController.GameOver();
+			gameController.GameOver();
 			// destroy obj, delay 0.5 so it gives the chance to play the sfx
+			//Destroy(other);
+			other.gameObject.SetActive(false);
 			Destroy(gameObject, 0.5f);
-			Destroy(other);
+
 
 		}
 	}

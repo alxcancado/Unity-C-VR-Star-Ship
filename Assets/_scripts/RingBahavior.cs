@@ -12,7 +12,7 @@ public class RingBahavior : MonoBehaviour {
 
 	void Awake(){
 
-		gameController = GameObject.FindGameObjectWithTag("Player").GetComponent<GameController>();
+		gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 		enemyRigidbody = GetComponent<Rigidbody>();
 		audioSource = GetComponent<AudioSource>();
 	}
@@ -30,11 +30,10 @@ public class RingBahavior : MonoBehaviour {
 		if (other.tag == "Player"){
 
 			audioSource.Play();
-			// set game over
-			//gameController.AddScore(points);
+			gameController.AddScore(points);
 			// destroy obj, delay 0.5 so it gives the chance to play the sfx
 			Destroy(gameObject, 0.5f);
-			Destroy(other);
+
 
 		}
 	}
